@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train: baseline (TF-IDF + Ridge)",
+      "type": "python",
+      "request": "launch",
+      "program": "/src/train_baseline.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--train_csv", "data/train.csv",
+        "--text_col", "catalog_content",
+        "--target_col", "price",
+        "--out_dir", "artifacts"
+      ],
+      "env": { "PYTHONUTF8": "1" }
+    },
+    {
+      "name": "Train: HF regression (GPU)",
+      "type": "python",
+      "request": "launch",
+      "program": "/src/train_hf_baseline.py",
+      "console": "integratedTerminal",
+      "args": [
+        "--train_csv", "data/train.csv",
+        "--text_col", "catalog_content",
+        "--target_col", "price",
+        "--out_dir", "artifacts_hf"
+      ],
+      "env": { "PYTHONUTF8": "1" }
+    }
+  ]
+}
